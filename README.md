@@ -1,0 +1,7 @@
+- 👋 Hi, I’m @matiqueue, but you can call me Szymon.
+- 👀 I’m interested in playing volleyball and building web applications using Next.js technology.
+- 🌱 I’m currently learning MongoDB, TypeScript, and React to enhance my skills.
+- 💞️ I’m looking to collaborate on interesting web projects.
+- 📫 You can reach me via Facebook at facebook.com/matiqueue or on Discord at matiqueue#0.
+- 😄 Pronouns: He/his.
+- ⚡ Fun fact: I aspire to become a mid-level full-stack developer, just lacking experience to reach my goal.
