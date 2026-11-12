@@ -74,51 +74,35 @@
 
 <br/>
 
-### 🤝 Let's Connect &amp; Collaborate
+---
 
 <div align="center">
 
-<table border="0" width="100%">
-  <tr>
-    <td align="center" width="25%">
-      <a href="https://matiqueue-portfolio.vercel.app" target="_blank">
-        <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /><br/>
-        <sub><b>matiqueue-portfolio</b></sub>
-      </a>
-    </td>
-    <td align="center" width="25%">
-      <a href="https://www.linkedin.com/in/szymon-g%C3%B3ral-214b232b2/" target="_blank">
-        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /><br/>
-        <sub><b>in/szymon-góral</b></sub>
-      </a>
-    </td>
-    <td align="center" width="25%">
-      <a href="mailto:szymon.goral@icloud.com">
-        <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /><br/>
-        <sub><b>szymon.goral@icloud.com</b></sub>
-      </a>
-    </td>
-    <td align="center" width="25%">
-      <a href="https://discord.com/users/matiqueue">
-        <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /><br/>
-        <sub><b>@matiqueue</b></sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-<br/>
+### 🤝 Let's Connect &amp; Collaborate
 
 <p align="center">
-  🚀 <b>Have an ambitious project, high-scale challenge, or engineering role in mind?</b><br/>
-  Always eager to partner on groundbreaking digital products, modern full-stack systems &amp; elegant web solutions.
+  <a href="https://matiqueue-portfolio.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+  </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/szymon-g%C3%B3ral-214b232b2/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  &nbsp;
+  <a href="mailto:szymon.goral@icloud.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  &nbsp;
+  <a href="https://discord.com/users/matiqueue">
+    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
+  </a>
+  &nbsp;
+  <img src="https://komarev.com/ghpvc/?username=matiqueue&style=for-the-badge&color=2563EB&label=VIEWS" alt="Profile Views" />
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=matiqueue&style=flat-square&color=2563EB&label=PROFILE+VIEWS" alt="Profile Views" />
+  Looking for a dedicated full-stack engineer, have an ambitious project in mind, or want to collaborate?<br/>
+  Feel free to reach out via <a href="mailto:szymon.goral@icloud.com"><b>szymon.goral@icloud.com</b></a> or explore my work on <a href="https://matiqueue-portfolio.vercel.app" target="_blank"><b>matiqueue-portfolio.vercel.app</b></a>! 🚀
 </p>
-
-<!-- Sleek Matching Footer Banner -->
-<img src="./assets/footer.svg" width="100%" alt="Footer Banner" />
 
 </div>
