@@ -36,10 +36,6 @@
 
 <div align="center">
 
-<p align="center">
-  <sub>Continuous integration in action • Tracking daily commit rhythm and open-source momentum</sub>
-</p>
-
 <!-- Interactive Contribution Snake Grid Animation (Cleaned without progress bar) -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
@@ -94,43 +90,29 @@
 
 <div align="center">
 
-<!-- Animated Terminal Prompt -->
+<!-- Borderless Animated Frequency & Live Signal Visualizer -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=3500&pause=1000&color=38BDF8&center=true&vCenter=true&multiline=false&width=750&height=35&lines=git+commit+-m+%22Ready+to+collaborate+on+innovative+projects%22;npx+ping-matiqueue+--email+--discord;Status%3A+Open+for+high-impact+engineering+opportunities+%E2%9A%A1" alt="Connect Terminal" />
-</p>
-
-<!-- Animated Cyber HUD Interactive Dispatch Banner -->
-<a href="https://matiqueue-portfolio.vercel.app" target="_blank">
-  <img src="./assets/connect-hud.svg" width="100%" alt="Connect with Szymon Góral - Live Dispatch" />
-</a>
-
-<br/><br/>
-
-<!-- Clickable Badges -->
-<p align="center">
-  <a href="https://matiqueue-portfolio.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-  </a>
-  &nbsp;
-  <a href="https://www.linkedin.com/in/szymon-g%C3%B3ral-214b232b2/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  &nbsp;
-  <a href="mailto:szymon.goral@icloud.com">
-    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  &nbsp;
-  <a href="https://discord.com/users/matiqueue">
-    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-  </a>
-  &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=matiqueue&style=for-the-badge&color=2563EB&label=VIEWS" alt="Profile Views" />
+  <img src="./assets/soundwave.svg" width="100%" alt="Live Signal Stream" />
 </p>
 
 <p align="center">
   <b>Got an ambitious product to launch, high-throughput backend to architect, or an engineering challenge to crack?</b><br/>
   From real-time reactive platforms to production-grade Next.js &amp; Python architectures — let's build something extraordinary.<br/>
   <sub>⚡ <i>Zero corporate fluff • High velocity • Clean architecture &amp; pixel-perfect craft</i></sub>
+</p>
+
+<br/>
+
+<!-- Sleek Floating Action Dock (Custom Glassmorphism Pill Buttons) -->
+<p align="center">
+  <a href="https://matiqueue-portfolio.vercel.app" target="_blank"><img src="./assets/btn-portfolio.svg" height="42" alt="Portfolio" /></a>&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/szymon-g%C3%B3ral-214b232b2/" target="_blank"><img src="./assets/btn-linkedin.svg" height="42" alt="LinkedIn" /></a>&nbsp;&nbsp;
+  <a href="mailto:szymon.goral@icloud.com"><img src="./assets/btn-email.svg" height="42" alt="Email" /></a>&nbsp;&nbsp;
+  <a href="https://discord.com/users/matiqueue" target="_blank"><img src="./assets/btn-discord.svg" height="42" alt="Discord" /></a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=matiqueue&style=flat-square&color=2563EB&label=PROFILE+VIEWS" alt="Profile Views" />
 </p>
 
 </div>

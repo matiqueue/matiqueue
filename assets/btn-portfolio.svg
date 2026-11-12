@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 42" width="170" height="42" fill="none">
+  <defs>
+    <linearGradient id="bg-pf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#080c14"/>
+    </linearGradient>
+    <linearGradient id="glow-pf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="168" height="40" rx="20" fill="url(#bg-pf)" stroke="url(#glow-pf)" stroke-width="1.2"/>
+  <path d="M26 27L34 13L42 27H26Z" fill="#f8fafc"/>
+  <text x="52" y="25" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.08em">PORTFOLIO</text>
+  <text x="146" y="25" fill="#38bdf8" font-family="ui-monospace, monospace" font-size="13" font-weight="700">↗</text>
+</svg>
