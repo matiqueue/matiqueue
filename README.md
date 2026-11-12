@@ -1,8 +1,8 @@
 <div align="center">
   
-<!-- Dynamic Animated Subtitle -->
+<!-- Dynamic Animated Subtitle (Expanded width to prevent cutoff) -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=61DAFB&center=true&vCenter=true&multiline=false&width=680&height=40&lines=Full-Stack+Engineer+(Next.js+%E2%80%A2+TypeScript+%E2%80%A2+Python%2FDjango)+%F0%9F%92%BB;Building+High-Performance+%26+Real-time+Web+Systems+%E2%9A%A1;Obsessed+with+Clean+Architecture+%26+Fluid+UI%2FUX+%E2%9C%A8;Passionate+about+Volleyball%2C+Tactics+%26+Chess+%F0%9F%8F%90%E2%99%9F%EF%B8%8F" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=3000&pause=1000&color=61DAFB&center=true&vCenter=true&multiline=false&width=820&height=40&lines=Full-Stack+Engineer+(Next.js+%E2%80%A2+TypeScript+%E2%80%A2+Python%2FDjango)+%F0%9F%92%BB;Building+High-Performance+%26+Real-time+Web+Systems+%E2%9A%A1;Obsessed+with+Clean+Architecture+%26+Fluid+UI%2FUX+%E2%9C%A8;Passionate+about+Volleyball%2C+Tactics+%26+Chess+%F0%9F%8F%90%E2%99%9F%EF%B8%8F" alt="Typing SVG" />
 </p>
 
 <!-- Modern macOS-style Interactive SVG Header -->
@@ -43,7 +43,7 @@
 
 <br/>
 
-<!-- Interactive Contribution Snake Grid Animation -->
+<!-- Interactive Contribution Snake Grid Animation (Cleaned without progress bar) -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
 </p>
@@ -72,42 +72,53 @@
 > **Open-Source vs. Production Activity:**
 > The statistics and streaks above reflect only my personal public repositories. The vast majority of my daily engineering — including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam** — is committed directly to private enterprise organizations. 🔒
 
----
+<br/>
+
+### 🤝 Let's Connect &amp; Collaborate
 
 <div align="center">
 
-<!-- Quick Action & Social Badges -->
-<p align="center">
-  <a href="https://matiqueue-portfolio.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-  </a>
-  &nbsp;
-  <a href="https://www.linkedin.com/in/szymon-g%C3%B3ral-214b232b2/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  &nbsp;
-  <a href="mailto:szymon.goral@icloud.com">
-    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  &nbsp;
-  <a href="https://discord.com/users/matiqueue">
-    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-  </a>
-  &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=matiqueue&style=for-the-badge&color=2563EB&label=VIEWS" alt="Profile Views" />
-</p>
+<table border="0" width="100%">
+  <tr>
+    <td align="center" width="25%">
+      <a href="https://matiqueue-portfolio.vercel.app" target="_blank">
+        <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /><br/>
+        <sub><b>matiqueue-portfolio</b></sub>
+      </a>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://www.linkedin.com/in/szymon-g%C3%B3ral-214b232b2/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /><br/>
+        <sub><b>in/szymon-góral</b></sub>
+      </a>
+    </td>
+    <td align="center" width="25%">
+      <a href="mailto:szymon.goral@icloud.com">
+        <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /><br/>
+        <sub><b>szymon.goral@icloud.com</b></sub>
+      </a>
+    </td>
+    <td align="center" width="25%">
+      <a href="https://discord.com/users/matiqueue">
+        <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /><br/>
+        <sub><b>@matiqueue</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
 <br/>
 
-### 🤝 Let's Connect &amp; Build Together
-
 <p align="center">
-  Looking for a dedicated full-stack engineer to build high-performance web applications, real-time architectures, or modern digital platforms?<br/>
-  I'm always open to discussing new opportunities, challenging engineering problems, and innovative projects.
+  🚀 <b>Have an ambitious project, high-scale challenge, or engineering role in mind?</b><br/>
+  Always eager to partner on groundbreaking digital products, modern full-stack systems &amp; elegant web solutions.
 </p>
 
 <p align="center">
-  📫 <b>Direct Contact:</b> <a href="mailto:szymon.goral@icloud.com"><b>szymon.goral@icloud.com</b></a> &nbsp;•&nbsp; 🌐 <b>Explore Live Work:</b> <a href="https://matiqueue-portfolio.vercel.app" target="_blank"><b>matiqueue-portfolio.vercel.app</b></a>
+  <img src="https://komarev.com/ghpvc/?username=matiqueue&style=flat-square&color=2563EB&label=PROFILE+VIEWS" alt="Profile Views" />
 </p>
+
+<!-- Sleek Matching Footer Banner -->
+<img src="./assets/footer.svg" width="100%" alt="Footer Banner" />
 
 </div>
