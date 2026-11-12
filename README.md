@@ -32,15 +32,10 @@
 ### ⚡ Daily Commit Velocity &amp; Contribution Flow
 
 <div align="center">
-
-<!-- Interactive Contribution Snake Grid Animation (Cleaned without progress bar) -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
 </p>
-
 </div>
-
-<br/>
 
 ### 🛠️ Core Arsenal & Tech Stack
 
@@ -73,13 +68,9 @@
 
 </div>
 
-<br/>
-
 > [!NOTE]
 > **Open-Source vs. Production Activity:**
 > The statistics and streaks above reflect only my personal public repositories. The vast majority of my daily engineering, including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam**, is committed directly to private enterprise organizations. 🔒
-
-<br/>
 
 ### 🤝 Let's Connect &amp; Collaborate
 
@@ -98,8 +89,6 @@
   <sub>⚡ <i>Zero corporate fluff • High velocity • Clean architecture &amp; pixel-perfect craft</i></sub>
 </p>
 
-<br/>
-
 <!-- Sleek Floating Action Dock (Custom Glassmorphism Pill Buttons) -->
 <p align="center">
   <a href="https://matiqueue-portfolio.vercel.app" target="_blank"><img src="./assets/btn-portfolio.svg" height="42" alt="Portfolio" /></a>&nbsp;&nbsp;
@@ -109,7 +98,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/matiqueue"><img src="https://visitor-badge.laobi.icu/badge?page_id=matiqueue&left_text=PROFILE%20VIEWS&left_color=%230f172a&right_color=%2338bdf8&radius=12&height=28&logo=github" alt="Profile Views" /></a>
+  <a href="https://github.com/matiqueue"><img src="https://komarev.com/ghpvc/?username=matiqueue&style=for-the-badge&color=38bdf8" alt="Profile Views" /></a>
 </p>
 
 </div>
