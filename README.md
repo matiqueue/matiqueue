@@ -27,12 +27,9 @@
 <p align="center">
   <img src="https://streak-stats.demolab.com/?user=matiqueue&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=ff0080&currStreakLabel=70a5fd" alt="GitHub Streak" />
 </p>
-
 </div>
 
-<br/>
-
-### 🐍 Daily Commit Velocity & Contribution Flow
+### ⚡ Daily Commit Velocity &amp; Contribution Flow
 
 <div align="center">
 
@@ -82,10 +79,6 @@
 
 <br/>
 
----
-
-<br/>
-
 ### 🤝 Let's Connect &amp; Collaborate
 
 <div align="center">
@@ -112,7 +105,7 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=matiqueue&style=flat-square&color=2563EB&label=PROFILE+VIEWS" alt="Profile Views" />
+  <a href="https://github.com/matiqueue"><img src="https://visitor-badge.laobi.icu/badge?page_id=matiqueue&left_text=PROFILE%20VIEWS&left_color=%230f172a&right_color=%2338bdf8&radius=12&height=28&logo=github" alt="Profile Views" /></a>
 </p>
 
 </div>
