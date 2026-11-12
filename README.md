@@ -70,7 +70,7 @@
 
 > [!NOTE]
 > **Open-Source vs. Production Activity:**
-> The statistics and streaks above reflect only my personal public repositories. The vast majority of my daily engineering — including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam** — is committed directly to private enterprise organizations. 🔒
+> The statistics and streaks above reflect only my personal public repositories. The vast majority of my daily engineering including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam** is committed directly to private enterprise organizations. 🔒
 
 <br/>
 
