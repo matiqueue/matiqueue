@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="100%" height="280" fill="none">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17"/>
+      <stop offset="50%" stop-color="#0e1322"/>
+      <stop offset="100%" stop-color="#0a0d17"/>
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Name Text Gradient -->
+    <linearGradient id="name-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#67e8f9"/>
+      <stop offset="70%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+
+    <!-- Glow Orbs -->
+    <radialGradient id="glow-cyan" cx="15%" cy="20%" r="45%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glow-purple" cx="85%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glow-pink" cx="50%" cy="100%" r="50%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Tech Pill Background -->
+    <linearGradient id="pill-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid-pattern" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#334155" fill-opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .pulsing-dot {
+      animation: pulse-dot 2.5s infinite ease-in-out;
+      transform-origin: 160px 48px;
+    }
+    .font-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+    .font-desc {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+    .font-mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+  </style>
+
+  <!-- Base Card with Rounded Corners -->
+  <rect x="2" y="2" width="996" height="276" rx="20" fill="url(#bg-grad)"/>
+  
+  <!-- Subtle Grid Dots Overlay -->
+  <rect x="2" y="2" width="996" height="276" rx="20" fill="url(#grid-pattern)"/>
+
+  <!-- Ambient Glow Orbs -->
+  <rect x="2" y="2" width="996" height="276" rx="20" fill="url(#glow-cyan)"/>
+  <rect x="2" y="2" width="996" height="276" rx="20" fill="url(#glow-purple)"/>
+  <rect x="2" y="2" width="996" height="276" rx="20" fill="url(#glow-pink)"/>
+
+  <!-- Card Border -->
+  <rect x="2" y="2" width="996" height="276" rx="20" stroke="url(#border-grad)" stroke-width="1.5" fill="none"/>
+
+  <!-- Top Status Pill -->
+  <g transform="translate(50, 36)">
+    <rect x="0" y="0" width="310" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <circle cx="16" cy="14" r="4.5" fill="#22c55e" class="pulsing-dot"/>
+    <text x="32" y="18" fill="#94a3b8" class="font-mono">FULL-STACK DEVELOPER &amp; DESIGNER</text>
+  </g>
+
+  <!-- Location Badge (Top Right) -->
+  <g transform="translate(790, 36)">
+    <rect x="0" y="0" width="160" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="80" y="18" fill="#94a3b8" text-anchor="middle" class="font-mono">📍 KRAKÓW, PL</text>
+  </g>
+
+  <!-- Main Headline / Name -->
+  <text x="50" y="130" fill="url(#name-grad)" class="font-title" font-size="46">Szymon Góral</text>
+
+  <!-- Subtitle -->
+  <text x="50" y="168" fill="#94a3b8" class="font-desc" font-size="18">Crafting scalable web applications, real-time systems &amp; polished digital experiences.</text>
+
+  <!-- Divider Line -->
+  <line x1="50" y1="194" x2="950" y2="194" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Tech Stack Chips (Bottom Row) -->
+  <g transform="translate(50, 212)">
+    <!-- Next.js -->
+    <g transform="translate(0, 0)">
+      <rect width="115" height="34" rx="8" fill="url(#pill-grad)" stroke="#334155" stroke-width="1"/>
+      <text x="57" y="22" fill="#e2e8f0" text-anchor="middle" class="font-mono">▲ NEXT.JS</text>
+    </g>
+
+    <!-- TypeScript -->
+    <g transform="translate(125, 0)">
+      <rect width="125" height="34" rx="8" fill="url(#pill-grad)" stroke="#334155" stroke-width="1"/>
+      <text x="62" y="22" fill="#38bdf8" text-anchor="middle" class="font-mono">TS TYPESCRIPT</text>
+    </g>
+
+    <!-- React -->
+    <g transform="translate(260, 0)">
+      <rect width="105" height="34" rx="8" fill="url(#pill-grad)" stroke="#334155" stroke-width="1"/>
+      <text x="52" y="22" fill="#61dafb" text-anchor="middle" class="font-mono">⚛ REACT</text>
+    </g>
+
+    <!-- Node.js -->
+    <g transform="translate(375, 0)">
+      <rect width="110" height="34" rx="8" fill="url(#pill-grad)" stroke="#334155" stroke-width="1"/>
+      <text x="55" y="22" fill="#4ade80" text-anchor="middle" class="font-mono">⬢ NODE.JS</text>
+    </g>
+
+    <!-- MongoDB -->
+    <g transform="translate(495, 0)">
+      <rect width="115" height="34" rx="8" fill="url(#pill-grad)" stroke="#334155" stroke-width="1"/>
+      <text x="57" y="22" fill="#10b981" text-anchor="middle" class="font-mono">🍃 MONGODB</text>
+    </g>
+
+    <!-- Tailwind -->
+    <g transform="translate(620, 0)">
+      <rect width="115" height="34" rx="8" fill="url(#pill-grad)" stroke="#334155" stroke-width="1"/>
+      <text x="57" y="22" fill="#38bdf8" text-anchor="middle" class="font-mono">🎨 TAILWIND</text>
+    </g>
+
+    <!-- Real-time -->
+    <g transform="translate(745, 0)">
+      <rect width="155" height="34" rx="8" fill="url(#pill-grad)" stroke="#334155" stroke-width="1"/>
+      <text x="77" y="22" fill="#f43f5e" text-anchor="middle" class="font-mono">⚡ REAL-TIME / WS</text>
+    </g>
+  </g>
+</svg>
