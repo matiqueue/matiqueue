@@ -44,6 +44,8 @@
 
 ### 🛠️ Core Arsenal & Tech Stack
 
+</br>
+
 <div align="center">
 
 <table border="0" width="100%">
@@ -80,6 +82,8 @@
 <br/>
 
 ### 🤝 Let's Connect &amp; Collaborate
+
+</br>
 
 <div align="center">
 
