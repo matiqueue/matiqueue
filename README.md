@@ -20,16 +20,16 @@
 
 <table border="0" width="100%">
   <tr>
-    <td align="center" width="50%" valign="middle">
-      <img src="https://github-stats-extended.vercel.app/api?username=matiqueue&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bb9af7&text_color=c0caf5" height="165" alt="GitHub Stats" />
+    <td align="center" width="58%" valign="middle">
+      <img src="https://github-stats-extended.vercel.app/api?username=matiqueue&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bb9af7&text_color=c0caf5" height="180" alt="GitHub Stats" />
     </td>
-    <td align="center" width="50%" valign="middle">
+    <td align="center" width="42%" valign="middle">
       <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=matiqueue&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c0caf5" height="165" alt="Top Languages" />
     </td>
   </tr>
   <tr>
     <td align="center" colspan="2" valign="middle">
-      <img src="https://streak-stats.demolab.com/?user=matiqueue&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=ff0080&currStreakLabel=70a5fd" height="175" alt="GitHub Streak" />
+      <img src="https://streak-stats.demolab.com/?user=matiqueue&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=ff0080&currStreakLabel=70a5fd&disable_animations=true" height="180" alt="GitHub Streak" />
     </td>
   </tr>
 </table>
