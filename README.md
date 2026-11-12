@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=matiqueue&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=ff0080&currStreakLabel=70a5fd" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com/?user=matiqueue&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=ff0080&currStreakLabel=70a5fd&card_width=720&card_height=170" height="170" alt="GitHub Streak" />
 </p>
 </div>
 
