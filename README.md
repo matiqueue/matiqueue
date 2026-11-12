@@ -28,6 +28,18 @@
   <img src="https://streak-stats.demolab.com/?user=matiqueue&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=ff0080&currStreakLabel=70a5fd" alt="GitHub Streak" />
 </p>
 
+</div>
+
+<br/>
+
+### 🐍 Daily Commit Velocity & Contribution Flow
+
+<div align="center">
+
+<p align="center">
+  <sub>Continuous integration in action • Tracking daily commit rhythm and open-source momentum</sub>
+</p>
+
 <!-- Interactive Contribution Snake Grid Animation (Cleaned without progress bar) -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
@@ -87,9 +99,9 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=3500&pause=1000&color=38BDF8&center=true&vCenter=true&multiline=false&width=750&height=35&lines=git+commit+-m+%22Ready+to+collaborate+on+innovative+projects%22;npx+ping-matiqueue+--email+--discord;Status%3A+Open+for+high-impact+engineering+opportunities+%E2%9A%A1" alt="Connect Terminal" />
 </p>
 
-<!-- Animated macOS Interactive Contact Code Card -->
+<!-- Animated Cyber HUD Interactive Dispatch Banner -->
 <a href="https://matiqueue-portfolio.vercel.app" target="_blank">
-  <img src="./assets/contact.svg" width="100%" alt="Contact Matiqueue" />
+  <img src="./assets/connect-hud.svg" width="100%" alt="Connect with Szymon Góral - Live Dispatch" />
 </a>
 
 <br/><br/>
@@ -116,8 +128,9 @@
 </p>
 
 <p align="center">
-  Looking for a dedicated full-stack engineer, have an ambitious project in mind, or want to collaborate?<br/>
-  Feel free to reach out via <a href="mailto:szymon.goral@icloud.com"><b>szymon.goral@icloud.com</b></a> or explore my work on <a href="https://matiqueue-portfolio.vercel.app" target="_blank"><b>matiqueue-portfolio.vercel.app</b></a>! 🚀
+  <b>Got an ambitious product to launch, high-throughput backend to architect, or an engineering challenge to crack?</b><br/>
+  From real-time reactive platforms to production-grade Next.js &amp; Python architectures — let's build something extraordinary.<br/>
+  <sub>⚡ <i>Zero corporate fluff • High velocity • Clean architecture &amp; pixel-perfect craft</i></sub>
 </p>
 
 </div>
