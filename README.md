@@ -32,9 +32,7 @@
 ### ⚡ Daily Commit Velocity &amp; Contribution Flow
 
 <div align="center">
-<p align="center">
   <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
-</p>
 </div>
 
 ### 🛠️ Core Arsenal & Tech Stack
@@ -46,25 +44,27 @@
     <td align="center" width="33%" valign="top">
       <p><b>⚡ Frontend &amp; UI</b></p>
       <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,redux,vite,threejs,flutter&theme=dark" alt="Frontend Arsenal" />
+        <img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,redux,vite,threejs,flutter&perline=4&theme=dark" alt="Frontend Arsenal" />
       </a>
     </td>
     <td align="center" width="33%" valign="top">
       <p><b>⚙️ Backend &amp; Data</b></p>
       <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=python,django,nodejs,express,mongodb,postgres,prisma,redis&theme=dark" alt="Backend Arsenal" />
+        <img src="https://skillicons.dev/icons?i=python,django,nodejs,express,mongodb,postgres,prisma,redis&perline=4&theme=dark" alt="Backend Arsenal" />
       </a>
     </td>
     <td align="center" width="33%" valign="top">
       <p><b>🛠️ Tools &amp; Cloud</b></p>
       <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=docker,linux,bash,cloudflare,nginx,postman,vercel,figma&theme=dark" alt="Tools & Cloud" />
+        <img src="https://skillicons.dev/icons?i=docker,linux,bash,cloudflare,nginx,postman,vercel,figma&perline=4&theme=dark" alt="Tools & Cloud" />
       </a>
     </td>
   </tr>
 </table>
 
 </div>
+
+<br/>
 
 > [!NOTE]
 > **Open-Source vs. Production Activity:**
@@ -94,7 +94,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/matiqueue"><img src="https://komarev.com/ghpvc/?username=matiqueue&style=for-the-badge&color=38bdf8" alt="Profile Views" /></a>
+  <a href="https://github.com/matiqueue"><img src="./assets/btn-views.svg" height="42" alt="Profile Views" /></a>
 </p>
 
 </div>

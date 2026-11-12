@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 42" width="170" height="42" fill="none">
+  <defs>
+    <linearGradient id="bg-vw" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#080c14"/>
+    </linearGradient>
+    <linearGradient id="glow-vw" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="badge-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#022c22" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="168" height="40" rx="20" fill="url(#bg-vw)" stroke="url(#glow-vw)" stroke-width="1.2"/>
+  
+  <!-- Modern Eye Vector Icon -->
+  <g transform="translate(24, 13)">
+    <path d="M1 8C1 8 4.5 2.5 9 2.5C13.5 2.5 17 8 17 8C17 8 13.5 13.5 9 13.5C4.5 13.5 1 8 1 8Z" stroke="#34d399" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="9" cy="8" r="2.8" fill="#34d399"/>
+    <circle cx="10" cy="7" r="0.9" fill="#ffffff"/>
+  </g>
+
+  <!-- Label matching other 4 buttons -->
+  <text x="50" y="25" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.08em">VIEWS</text>
+  
+  <!-- Counter Pill Badge -->
+  <rect x="108" y="11" width="46" height="20" rx="10" fill="url(#badge-glow)" stroke="#10b981" stroke-width="1"/>
+  <circle cx="118" cy="21" r="3" fill="#22c55e"/>
+  <text x="137" y="25" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="11" font-weight="800" text-anchor="middle">32+</text>
+</svg>
