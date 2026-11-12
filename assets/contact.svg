@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 240" width="100%" height="240" fill="none">
+  <defs>
+    <!-- Background Canvas Gradient -->
+    <linearGradient id="c-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14"/>
+      <stop offset="50%" stop-color="#0d1322"/>
+      <stop offset="100%" stop-color="#060911"/>
+    </linearGradient>
+
+    <!-- Outer Border Glow Gradient -->
+    <linearGradient id="c-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#818cf8" stop-opacity="0.4"/>
+      <stop offset="70%" stop-color="#34d399" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#f43f5e" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Inner Window Bar Gradient -->
+    <linearGradient id="c-bar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#111827" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Ambient Glowing Orbs -->
+    <radialGradient id="c-glow-cyan" cx="15%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="c-glow-emerald" cx="85%" cy="70%" r="55%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="c-glow-violet" cx="50%" cy="100%" r="50%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Dot Matrix Pattern -->
+    <pattern id="c-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#475569" fill-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulse-live {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.85); }
+    }
+    @keyframes radar-ping {
+      0% { r: 4.5px; opacity: 0.9; stroke-width: 1.5px; }
+      100% { r: 13px; opacity: 0; stroke-width: 0.4px; }
+    }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes aurora-float {
+      0%, 100% { opacity: 0.22; transform: translate(0px, 0px) scale(1); }
+      50% { opacity: 0.42; transform: translate(15px, -8px) scale(1.08); }
+    }
+    @keyframes border-shimmer {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+    .pulsing-dot {
+      animation: pulse-live 2s infinite ease-in-out;
+      transform-origin: 16px 13px;
+    }
+    .radar-wave {
+      animation: radar-ping 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      transform-origin: 16px 13px;
+    }
+    .cursor {
+      animation: blink 1s infinite;
+    }
+    .aurora-anim {
+      animation: aurora-float 6s infinite ease-in-out;
+    }
+    .border-anim {
+      animation: border-shimmer 4s infinite ease-in-out;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+    }
+  </style>
+
+  <!-- Base Card -->
+  <rect x="2" y="2" width="846" height="236" rx="18" fill="url(#c-bg)"/>
+  <rect x="2" y="2" width="846" height="236" rx="18" fill="url(#c-dots)"/>
+  <rect x="2" y="2" width="846" height="236" rx="18" fill="url(#c-glow-cyan)" class="aurora-anim"/>
+  <rect x="2" y="2" width="846" height="236" rx="18" fill="url(#c-glow-emerald)"/>
+  <rect x="2" y="2" width="846" height="236" rx="18" fill="url(#c-glow-violet)"/>
+  <rect x="2" y="2" width="846" height="236" rx="18" stroke="url(#c-border)" stroke-width="1.4" fill="none" class="border-anim"/>
+
+  <!-- Top Window Header Bar -->
+  <path d="M 2 20 Q 2 2 20 2 L 830 2 Q 848 2 848 20 L 848 46 L 2 46 Z" fill="url(#c-bar)"/>
+  <line x1="2" y1="46" x2="848" y2="46" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Mac Traffic Light Dots -->
+  <circle cx="30" cy="24" r="5.5" fill="#ef4444"/>
+  <circle cx="48" cy="24" r="5.5" fill="#f59e0b"/>
+  <circle cx="66" cy="24" r="5.5" fill="#10b981"/>
+
+  <!-- Window Breadcrumb -->
+  <text x="425" y="28" fill="#64748b" text-anchor="middle" class="mono" font-size="12" font-weight="500">
+    contact.ts — @matiqueue
+  </text>
+
+  <!-- Live Status Pill -->
+  <g transform="translate(635, 11)">
+    <rect width="185" height="24" rx="12" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
+    <circle cx="16" cy="12" r="4" fill="#22c55e" class="pulsing-dot"/>
+    <circle cx="16" cy="12" r="4" fill="none" stroke="#22c55e" class="radar-wave"/>
+    <text x="28" y="16" fill="#cbd5e1" class="mono" font-size="10.5" font-weight="600">INBOX: READY TO TALK</text>
+  </g>
+
+  <!-- Code Block Content Inside Window -->
+  <g transform="translate(36, 74)">
+    <!-- Line 1 -->
+    <text x="0" y="0" class="mono" font-size="13">
+      <tspan fill="#c084fc">export const</tspan> <tspan fill="#38bdf8">contact</tspan> <tspan fill="#94a3b8">=</tspan> <tspan fill="#f8fafc">{</tspan>
+    </text>
+
+    <!-- Line 2 -->
+    <text x="24" y="24" class="mono" font-size="13">
+      <tspan fill="#94a3b8">email:</tspan> <tspan fill="#34d399">"szymon.goral@icloud.com"</tspan><tspan fill="#94a3b8">,</tspan>
+    </text>
+
+    <!-- Line 3 -->
+    <text x="24" y="48" class="mono" font-size="13">
+      <tspan fill="#94a3b8">portfolio:</tspan> <tspan fill="#34d399">"https://matiqueue-portfolio.vercel.app"</tspan><tspan fill="#94a3b8">,</tspan>
+    </text>
+
+    <!-- Line 4 -->
+    <text x="24" y="72" class="mono" font-size="13">
+      <tspan fill="#94a3b8">discord:</tspan> <tspan fill="#34d399">"@matiqueue"</tspan><tspan fill="#94a3b8">,</tspan>
+    </text>
+
+    <!-- Line 5 -->
+    <text x="24" y="96" class="mono" font-size="13">
+      <tspan fill="#94a3b8">stackFocus:</tspan> <tspan fill="#f43f5e">[</tspan><tspan fill="#38bdf8">"Next.js"</tspan><tspan fill="#94a3b8">, </tspan><tspan fill="#38bdf8">"TypeScript"</tspan><tspan fill="#94a3b8">, </tspan><tspan fill="#34d399">"Python/Django"</tspan><tspan fill="#94a3b8">, </tspan><tspan fill="#38bdf8">"WebSockets"</tspan><tspan fill="#f43f5e">]</tspan><tspan fill="#94a3b8">,</tspan>
+    </text>
+
+    <!-- Line 6 -->
+    <text x="24" y="120" class="mono" font-size="13">
+      <tspan fill="#94a3b8">status:</tspan> <tspan fill="#fbbf24">"Available for high-impact web platforms &amp; engineering challenges"</tspan>
+    </text>
+
+    <!-- Line 7 -->
+    <text x="0" y="144" class="mono" font-size="13">
+      <tspan fill="#f8fafc">};</tspan> <tspan fill="#38bdf8" class="cursor">_</tspan>
+    </text>
+  </g>
+</svg>

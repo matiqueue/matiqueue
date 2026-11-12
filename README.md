@@ -14,11 +14,7 @@
 
 <br/>
 
-
-
-</div>
-
-<br/>
+### 📊 GitHub Activity & Statistics
 
 <div align="center">
 
@@ -38,6 +34,8 @@
 </p>
 
 </div>
+
+<br/>
 
 ### 🛠️ Core Arsenal & Tech Stack
 
@@ -66,21 +64,37 @@
   </tr>
 </table>
 
-<br/>
+</div>
 
+<br/>
 
 > [!NOTE]
 > **Open-Source vs. Production Activity:**
-> The statistics and streaks above reflect only my personal public repositories. The vast majority of my daily engineering including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam** is committed directly to private enterprise organizations. 🔒
+> The statistics and streaks above reflect only my personal public repositories. The vast majority of my daily engineering — including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam** — is committed directly to private enterprise organizations. 🔒
 
 <br/>
 
 ---
 
-<div align="center">
+<br/>
 
 ### 🤝 Let's Connect &amp; Collaborate
 
+<div align="center">
+
+<!-- Animated Terminal Prompt -->
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=3500&pause=1000&color=38BDF8&center=true&vCenter=true&multiline=false&width=750&height=35&lines=git+commit+-m+%22Ready+to+collaborate+on+innovative+projects%22;npx+ping-matiqueue+--email+--discord;Status%3A+Open+for+high-impact+engineering+opportunities+%E2%9A%A1" alt="Connect Terminal" />
+</p>
+
+<!-- Animated macOS Interactive Contact Code Card -->
+<a href="https://matiqueue-portfolio.vercel.app" target="_blank">
+  <img src="./assets/contact.svg" width="100%" alt="Contact Matiqueue" />
+</a>
+
+<br/><br/>
+
+<!-- Clickable Badges -->
 <p align="center">
   <a href="https://matiqueue-portfolio.vercel.app" target="_blank">
     <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
