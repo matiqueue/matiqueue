@@ -1,70 +1,18 @@
 <div align="center">
+  
+<!-- Dynamic Animated Subtitle -->
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=61DAFB&center=true&vCenter=true&multiline=false&width=650&height=40&lines=Full-Stack+Engineer+%F0%9F%92%BB;Next.js+%2B+TypeScript+Craftsman+%E2%9A%A1;Real-time+Multiplayer+%26+Sockets+%F0%9F%9A%80;UI%2FUX+Enthusiast%2C+Volleyball+%26+Chess+%E2%99%9F%EF%B8%8F" alt="Typing SVG" />
+</p>
 
 <!-- Modern macOS-style Interactive SVG Header -->
 <a href="https://matiqueue-portfolio.vercel.app" target="_blank">
   <img src="./assets/header.svg" width="100%" alt="Szymon Góral - Full-Stack Developer" />
 </a>
 
-<br/><br/>
-
-<!-- Dynamic Animated Subtitle -->
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=61DAFB&center=true&vCenter=true&multiline=false&width=650&height=40&lines=Full-Stack+Engineer+%F0%9F%92%BB;Next.js+%2B+TypeScript+Craftsman+%E2%9A%A1;Real-time+Multiplayer+%26+Sockets+%F0%9F%9A%80;UI%2FUX+Enthusiast%2C+Volleyball+%26+Chess+%E2%99%9F%EF%B8%8F" alt="Typing SVG" />
-</p>
-
-<!-- Quick Action & Social Badges -->
-<p align="center">
-  <a href="https://matiqueue-portfolio.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-  </a>
-  &nbsp;
-  <a href="https://www.linkedin.com/in/szymon-g%C3%B3ral-214b232b2/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  &nbsp;
-  <a href="mailto:szymon.goral@icloud.com">
-    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  &nbsp;
-  <a href="https://discord.com/users/matiqueue">
-    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-  </a>
-  &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=matiqueue&style=for-the-badge&color=2563EB&label=VIEWS" alt="Profile Views" />
-</p>
-
 </div>
 
----
-
-### 👨‍💻 Developer Profile
-
-```typescript
-// ⚡ config/matiqueue.ts
-export const developer: FullStackEngineer = {
-  name: "Szymon Góral",
-  handle: "@matiqueue",
-  location: "Kraków / Olkusz, Poland 🇵🇱",
-  education: "IT Specialist (Technik Programista)",
-  role: "Full-Stack Developer @ GranTeam",
-  
-  coreStack: {
-    frontend: ["Next.js (App Router)", "React", "TypeScript", "Tailwind CSS"],
-    backend:  ["Node.js", "Express", "MongoDB", "Prisma", "Socket.io"],
-  },
-  
-  craft: [
-    "Architecting scalable web applications with fluid, interactive UI/UX",
-    "Real-time platforms & WebSocket matchmaking (creator of Mate Chess)",
-    "Production performance, modern animations & technical SEO optimization"
-  ],
-  
-  passions: ["Competitive Volleyball 🏐", "Strategic Chess ♟️"],
-  portfolio: "https://matiqueue-portfolio.vercel.app"
-};
-```
-
----
+</br>
 
 ### 🛠️ Core Arsenal & Tech Stack
 
@@ -95,7 +43,7 @@ export const developer: FullStackEngineer = {
 
 </div>
 
----
+</br>
 
 ### 📊 GitHub Activity & Statistics
 
