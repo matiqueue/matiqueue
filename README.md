@@ -39,8 +39,6 @@
 
 ### 🛠️ Core Arsenal & Tech Stack
 
-</br>
-
 <div align="center">
 
 <table border="0" width="100%">
@@ -73,8 +71,6 @@
 > The statistics and streaks above reflect only my personal public repositories. The vast majority of my daily engineering, including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam**, is committed directly to private enterprise organizations. 🔒
 
 ### 🤝 Let's Connect &amp; Collaborate
-
-</br>
 
 <div align="center">
 
