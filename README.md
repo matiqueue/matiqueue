@@ -10,29 +10,6 @@
   <img src="./assets/header.svg" width="100%" alt="Szymon Góral - Full-Stack Developer" />
 </a>
 
-<br/><br/>
-
-<!-- Quick Action & Social Badges -->
-<p align="center">
-  <a href="https://matiqueue-portfolio.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-  </a>
-  &nbsp;
-  <a href="https://www.linkedin.com/in/szymon-g%C3%B3ral-214b232b2/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  &nbsp;
-  <a href="mailto:szymon.goral@icloud.com">
-    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  &nbsp;
-  <a href="https://discord.com/users/matiqueue">
-    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-  </a>
-  &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=matiqueue&style=for-the-badge&color=2563EB&label=VIEWS" alt="Profile Views" />
-</p>
-
 </div>
 
 <br/>
@@ -64,15 +41,18 @@
   </tr>
 </table>
 
+<br/>
+
+<!-- Interactive Contribution Snake Grid Animation -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
+</p>
+
 </div>
 
 <br/>
 
 ### 📊 GitHub Activity & Statistics
-
-> [!NOTE]
-> **Open-Source vs. Production Activity:**
-> The statistics and streaks displayed below reflect only my personal public repositories. The vast majority of my daily engineering — including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam** — is committed directly to private enterprise organizations. 🔒
 
 <div align="center">
 
@@ -86,20 +66,48 @@
   <img src="https://streak-stats.demolab.com/?user=matiqueue&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=ff0080&currStreakLabel=70a5fd" alt="GitHub Streak" />
 </p>
 
-<!-- Interactive Contribution Snake Grid Animation -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
-</p>
-
 </div>
+
+> [!NOTE]
+> **Open-Source vs. Production Activity:**
+> The statistics and streaks above reflect only my personal public repositories. The vast majority of my daily engineering — including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam** — is committed directly to private enterprise organizations. 🔒
 
 ---
 
 <div align="center">
 
+<!-- Quick Action & Social Badges -->
 <p align="center">
-  🚀 <b>Looking for a developer who cares about performance, clean code &amp; aesthetics?</b><br/>
-  Let's build something extraordinary together — drop me a line at <a href="mailto:szymon.goral@icloud.com"><b>szymon.goral@icloud.com</b></a> or check out my work on <a href="https://matiqueue-portfolio.vercel.app" target="_blank"><b>matiqueue-portfolio.vercel.app</b></a>!
+  <a href="https://matiqueue-portfolio.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+  </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/szymon-g%C3%B3ral-214b232b2/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  &nbsp;
+  <a href="mailto:szymon.goral@icloud.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  &nbsp;
+  <a href="https://discord.com/users/matiqueue">
+    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
+  </a>
+  &nbsp;
+  <img src="https://komarev.com/ghpvc/?username=matiqueue&style=for-the-badge&color=2563EB&label=VIEWS" alt="Profile Views" />
+</p>
+
+<br/>
+
+### 🤝 Let's Connect &amp; Build Together
+
+<p align="center">
+  Looking for a dedicated full-stack engineer to build high-performance web applications, real-time architectures, or modern digital platforms?<br/>
+  I'm always open to discussing new opportunities, challenging engineering problems, and innovative projects.
+</p>
+
+<p align="center">
+  📫 <b>Direct Contact:</b> <a href="mailto:szymon.goral@icloud.com"><b>szymon.goral@icloud.com</b></a> &nbsp;•&nbsp; 🌐 <b>Explore Live Work:</b> <a href="https://matiqueue-portfolio.vercel.app" target="_blank"><b>matiqueue-portfolio.vercel.app</b></a>
 </p>
 
 </div>
