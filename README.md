@@ -75,7 +75,7 @@
 
 > [!NOTE]
 > **Open-Source vs. Production Activity:**
-> The statistics and streaks above reflect only my personal public repositories. The vast majority of my daily engineering — including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam** — is committed directly to private enterprise organizations. 🔒
+> The statistics and streaks above reflect only my personal public repositories. The vast majority of my daily engineering, including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam**, is committed directly to private enterprise organizations. 🔒
 
 <br/>
 
@@ -90,7 +90,7 @@
 
 <p align="center">
   <b>Got an ambitious product to launch, high-throughput backend to architect, or an engineering challenge to crack?</b><br/>
-  From real-time reactive platforms to production-grade Next.js &amp; Python architectures — let's build something extraordinary.<br/>
+  From real-time reactive platforms to production-grade Next.js &amp; Python architectures, let's build something extraordinary.<br/>
   <sub>⚡ <i>Zero corporate fluff • High velocity • Clean architecture &amp; pixel-perfect craft</i></sub>
 </p>
 
