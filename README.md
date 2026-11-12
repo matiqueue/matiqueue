@@ -14,6 +14,31 @@
 
 <br/>
 
+
+
+</div>
+
+<br/>
+
+<div align="center">
+
+<p align="center">
+  <img src="https://github-stats-extended.vercel.app/api?username=matiqueue&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bb9af7&text_color=c0caf5" height="170" alt="GitHub Stats" />
+  &nbsp;
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=matiqueue&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c0caf5" height="170" alt="Top Languages" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=matiqueue&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=ff0080&currStreakLabel=70a5fd" alt="GitHub Streak" />
+</p>
+
+<!-- Interactive Contribution Snake Grid Animation (Cleaned without progress bar) -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
+</p>
+
+</div>
+
 ### 🛠️ Core Arsenal & Tech Stack
 
 <div align="center">
@@ -43,30 +68,6 @@
 
 <br/>
 
-<!-- Interactive Contribution Snake Grid Animation (Cleaned without progress bar) -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
-</p>
-
-</div>
-
-<br/>
-
-### 📊 GitHub Activity & Statistics
-
-<div align="center">
-
-<p align="center">
-  <img src="https://github-stats-extended.vercel.app/api?username=matiqueue&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bb9af7&text_color=c0caf5" height="170" alt="GitHub Stats" />
-  &nbsp;
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=matiqueue&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c0caf5" height="170" alt="Top Languages" />
-</p>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=matiqueue&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=ff0080&currStreakLabel=70a5fd" alt="GitHub Streak" />
-</p>
-
-</div>
 
 > [!NOTE]
 > **Open-Source vs. Production Activity:**
