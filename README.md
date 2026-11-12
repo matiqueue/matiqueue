@@ -2,7 +2,7 @@
 
 <!-- Header Banner (Custom SVG - 100% Fast & Reliable) -->
 <a href="https://matiqueue-portfolio.vercel.app">
-  <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/main/assets/header.svg" width="100%" alt="Szymon Góral - Full-Stack Developer" />
+  <img src="./assets/header.svg" width="100%" alt="Szymon Góral - Full-Stack Developer" />
 </a>
 
 <!-- Dynamic Animated Subtitle -->
