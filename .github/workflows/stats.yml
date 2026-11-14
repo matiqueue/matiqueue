@@ -1,0 +1,49 @@
+name: Generate GitHub Stats
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate GitHub Stats SVG
+        uses: stats-organization/github-readme-stats-action@v2
+        env:
+          FETCH_MULTI_PAGE_STARS: "true"
+        with:
+          card: stats
+          options: "username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR&contribs_include_own_repos=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bb9af7&text_color=c0caf5"
+          path: dist/stats.svg
+          token: ${{ secrets.STATS_TOKEN || github.token }}
+          fail_on_error: true
+
+      - name: Generate Top Languages SVG
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: "username=${{ github.repository_owner }}&layout=compact&langs_count=8&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c0caf5"
+          path: dist/top-langs.svg
+          token: ${{ secrets.STATS_TOKEN || github.token }}
+          fail_on_error: true
+
+      - name: Push Stats SVGs to Stats Branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: stats
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

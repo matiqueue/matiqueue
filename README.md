@@ -19,9 +19,9 @@
 <div align="center">
 
 <p align="center">
-  <img src="https://github-stats-extended.vercel.app/api?username=matiqueue&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bb9af7&text_color=c0caf5" height="170" alt="GitHub Stats" />
+  <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/stats/stats.svg" height="170" alt="GitHub Stats" />
   &nbsp;
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=matiqueue&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c0caf5" height="170" alt="Top Languages" />
+  <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/stats/top-langs.svg" height="170" alt="Top Languages" />
 </p>
 
 <p align="center">
@@ -67,8 +67,8 @@
 <br/>
 
 > [!NOTE]
-> **Open-Source vs. Production Activity:**
-> The statistics and streaks above reflect only my personal public repositories. The vast majority of my daily engineering, including high-throughput commercial web platforms, Python/Django architectures, and client systems at **GranTeam**, is committed directly to private enterprise organizations. 🔒
+> **Open-Source &amp; Production Activity:**
+> The metrics above aggregate activity across both my open-source repositories and private engineering workspaces. While the numbers reflect my full engineering output, the source code for commercial platforms, Python/Django architectures, and client systems at **GranTeam** remains private inside enterprise organizations. 🔒
 
 ### 🤝 Let's Connect &amp; Collaborate
 
