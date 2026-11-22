@@ -3,9 +3,9 @@ import { createRequire } from "node:module";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
+import { parseCsv, resolveAccounts, runGraphql } from "./github-client.mjs";
+
 const ROLE_AFFILIATIONS = ["OWNER", "ORGANIZATION_MEMBER", "COLLABORATOR"];
-const TRANSIENT_STATUSES = new Set([502, 503, 504]);
-const RETRY_DELAYS_MS = [500, 1500, 3000];
 
 const CARD_THEME_OPTIONS = {
   theme: "tokyonight",
@@ -30,105 +30,143 @@ const TOP_LANGS_OPTIONS = {
   langs_count: 8,
 };
 
-const STAR_REPOS_QUERY = `
-query userStarRepos($login: String!, $after: String) {
-  user(login: $login) {
-    followers {
-      totalCount
-    }
-    repositories(
-      first: 100
-      after: $after
-      ownerAffiliations: [OWNER, ORGANIZATION_MEMBER, COLLABORATOR]
-      orderBy: { direction: DESC, field: STARGAZERS }
-    ) {
-      nodes {
+const REPO_LANG_FIELDS = `
+  name
+  nameWithOwner
+  isFork
+  isPrivate
+  stargazerCount
+  languages(first: 10, orderBy: { field: SIZE, direction: DESC }) {
+    edges {
+      size
+      node {
+        color
         name
-        nameWithOwner
-        stargazerCount
-      }
-      pageInfo {
-        hasNextPage
-        endCursor
       }
     }
   }
-}
 `;
 
-const LANG_REPOS_QUERY = `
-query userLangRepos($login: String!, $after: String) {
-  user(login: $login) {
-    repositories(
-      first: 100
-      after: $after
-      isFork: false
-      ownerAffiliations: [OWNER, ORGANIZATION_MEMBER, COLLABORATOR]
-    ) {
-      nodes {
-        name
-        nameWithOwner
-        languages(first: 10, orderBy: { field: SIZE, direction: DESC }) {
-          edges {
-            size
-            node {
-              color
-              name
-            }
+function buildStarReposQuery(useViewer) {
+  const root = useViewer ? "viewer" : "user(login: $login)";
+  const params = useViewer ? "($after: String)" : "($login: String!, $after: String)";
+  const args = useViewer
+    ? `first: 100, after: $after, affiliations: [OWNER, ORGANIZATION_MEMBER, COLLABORATOR], ownerAffiliations: [OWNER, ORGANIZATION_MEMBER, COLLABORATOR], orderBy: { direction: DESC, field: STARGAZERS }`
+    : `first: 100, after: $after, ownerAffiliations: [OWNER, ORGANIZATION_MEMBER, COLLABORATOR], orderBy: { direction: DESC, field: STARGAZERS }`;
+
+  return `
+    query ${params} {
+      account: ${root} {
+        followers {
+          totalCount
+        }
+        contributionsCollection {
+          contributionYears
+        }
+        repositories(${args}) {
+          nodes {
+            name
+            nameWithOwner
+            stargazerCount
+          }
+          pageInfo {
+            hasNextPage
+            endCursor
           }
         }
       }
-      pageInfo {
-        hasNextPage
-        endCursor
+    }
+  `;
+}
+
+function buildLangReposQuery(useViewer) {
+  const root = useViewer ? "viewer" : "user(login: $login)";
+  const params = useViewer ? "($after: String)" : "($login: String!, $after: String)";
+  const args = useViewer
+    ? `first: 100, after: $after, isFork: false, affiliations: [OWNER, ORGANIZATION_MEMBER, COLLABORATOR], ownerAffiliations: [OWNER, ORGANIZATION_MEMBER, COLLABORATOR]`
+    : `first: 100, after: $after, isFork: false, ownerAffiliations: [OWNER, ORGANIZATION_MEMBER, COLLABORATOR]`;
+
+  return `
+    query ${params} {
+      account: ${root} {
+        repositories(${args}) {
+          nodes {
+            ${REPO_LANG_FIELDS}
+          }
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+        }
       }
     }
-  }
+  `;
 }
-`;
 
-const CONTRIBUTED_REPOS_QUERY = `
-query userContributedRepos($login: String!, $after: String) {
-  user(login: $login) {
-    repositoriesContributedTo(
-      first: 100
-      after: $after
-      contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY]
-      includeUserRepositories: true
-    ) {
-      nodes {
-        nameWithOwner
-      }
-      pageInfo {
-        hasNextPage
-        endCursor
+function buildContributedReposQuery(useViewer) {
+  const root = useViewer ? "viewer" : "user(login: $login)";
+  const params = useViewer ? "($after: String)" : "($login: String!, $after: String)";
+  return `
+    query ${params} {
+      account: ${root} {
+        repositoriesContributedTo(
+          first: 100
+          after: $after
+          contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY]
+          includeUserRepositories: true
+        ) {
+          nodes {
+            ${REPO_LANG_FIELDS}
+          }
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+        }
       }
     }
-  }
+  `;
 }
-`;
 
-/**
- * Parse a comma-separated environment value into trimmed non-empty entries.
- *
- * @param {string | undefined} value Raw comma-separated string.
- * @returns {Array<string>} Parsed list of values.
- */
-export function parseCsv(value) {
-  if (!value) {
-    return [];
-  }
-  return value
-    .split(",")
-    .map((item) => item.trim())
-    .filter(Boolean);
+function buildYearlyContribReposQuery(years, useViewer) {
+  const root = useViewer ? "viewer" : "user(login: $login)";
+  const params = useViewer ? "" : "($login: String!)";
+  const yearBlocks = years
+    .map(
+      (year, index) => `
+        year_${index}: contributionsCollection(
+          from: "${year}-01-01T00:00:00Z"
+          to: "${year}-12-31T23:59:59Z"
+        ) {
+          commitContributionsByRepository(maxRepositories: 100) {
+            repository {
+              ${REPO_LANG_FIELDS}
+            }
+          }
+          pullRequestContributionsByRepository(maxRepositories: 100) {
+            repository {
+              ${REPO_LANG_FIELDS}
+            }
+          }
+        }
+      `,
+    )
+    .join("\n");
+
+  return `
+    query ${params} {
+      account: ${root} {
+        ${yearBlocks}
+      }
+    }
+  `;
 }
 
 /**
  * Resolve the build directory of `@stats-organization/github-readme-stats-core`.
  *
  * @param {string | undefined} explicitBuildDir Optional explicit path override.
- * @returns {string} Absolute path to the core package's `build` directory.
+ * @returns {string} Absolute path to the core package `build` directory.
  */
 export function resolveCoreBuildDir(
   explicitBuildDir = process.env.CORE_BUILD_DIR,
@@ -171,207 +209,173 @@ export async function loadCoreModules(buildDir = resolveCoreBuildDir()) {
 }
 
 /**
- * Sleep for `ms` milliseconds.
- *
- * @param {number} ms Delay in milliseconds.
+ * Paginate a GraphQL `account` connection up to `maxPages`.
  */
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-/**
- * Perform a GitHub API JSON request with retries for transient gateway/network failures.
- *
- * @param {string} url Target API URL.
- * @param {string} token GitHub token.
- * @param {RequestInit} [init] Optional fetch init overrides.
- * @returns {Promise<{ data: any, headers: Headers }>} Parsed JSON body and headers.
- */
-async function githubFetchJson(url, token, init = {}) {
-  let lastError;
-
-  for (let attempt = 0; attempt <= RETRY_DELAYS_MS.length; attempt++) {
-    try {
-      const response = await fetch(url, {
-        ...init,
-        headers: {
-          Accept: "application/vnd.github+json",
-          Authorization: `Bearer ${token}`,
-          "User-Agent": "matiqueue-profile-stats",
-          ...init.headers,
-        },
-      });
-
-      if (
-        TRANSIENT_STATUSES.has(response.status) &&
-        attempt < RETRY_DELAYS_MS.length
-      ) {
-        await sleep(RETRY_DELAYS_MS[attempt]);
-        continue;
-      }
-
-      const data = await response.json();
-      if (!response.ok) {
-        const message = data?.message || `HTTP ${response.status}`;
-        throw new Error(`GitHub API error (${response.status}): ${message}`);
-      }
-
-      return { data, headers: response.headers };
-    } catch (err) {
-      lastError = err;
-      const isNetworkError = err instanceof TypeError;
-      if (isNetworkError && attempt < RETRY_DELAYS_MS.length) {
-        await sleep(RETRY_DELAYS_MS[attempt]);
-        continue;
-      }
-      throw err;
-    }
-  }
-
-  throw lastError;
-}
-
-/**
- * Resolve the GitHub login belonging to a Personal Access Token.
- *
- * @param {string} token GitHub PAT.
- * @returns {Promise<{ login: string, scopes: Array<string> }>} Authenticated user login and OAuth scopes.
- */
-export async function resolveAuthenticatedUser(token) {
-  const { data, headers } = await githubFetchJson(
-    "https://api.github.com/user",
-    token,
-  );
-  if (!data?.login) {
-    throw new Error(
-      "Could not resolve GitHub username from WORK_STATS_TOKEN.",
-    );
-  }
-  const rawScopes = headers.get("x-oauth-scopes");
-  const scopes = rawScopes ? parseCsv(rawScopes) : [];
-  if (rawScopes !== null && !scopes.includes("repo")) {
-    console.warn(
-      `Warning: token for "${data.login}" does not list the "repo" scope; private repositories may be omitted.`,
-    );
-  }
-  return { login: data.login, scopes };
-}
-
-/**
- * Execute a GitHub GraphQL query.
- *
- * @param {string} query GraphQL query text.
- * @param {Record<string, unknown>} variables Query variables.
- * @param {string} token GitHub token.
- * @returns {Promise<any>} GraphQL `data` payload.
- */
-async function runGraphql(query, variables, token) {
-  const { data } = await githubFetchJson(
-    "https://api.github.com/graphql",
-    token,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query, variables }),
-    },
-  );
-
-  if (Array.isArray(data?.errors) && data.errors.length > 0) {
-    const firstMsg = data.errors[0]?.message || "Unknown GraphQL error";
-    throw new Error(`GitHub GraphQL error: ${firstMsg}`);
-  }
-
-  return data?.data;
-}
-
-/**
- * Paginate a GraphQL user connection up to `maxPages`.
- *
- * @param {string} query GraphQL query string accepting `$login` and `$after`.
- * @param {string} username GitHub username.
- * @param {string} token GitHub token.
- * @param {(user: any) => { nodes?: Array<any>, pageInfo?: { hasNextPage: boolean, endCursor: string | null } } | undefined} selectConnection
- * @param {object} [options]
- * @param {number} [options.maxPages] Maximum number of pages to fetch.
- * @param {(pageNodes: Array<any>, user: any) => boolean} [options.shouldStop] Optional early-stop predicate.
- * @returns {Promise<{ items: Array<any>, firstUser: any }>}
- */
-async function paginateGraphql(
+async function paginateAccountConnection(
   query,
   username,
   token,
+  useViewer,
   selectConnection,
   { maxPages = 10, shouldStop } = {},
 ) {
   const items = [];
   let after = null;
-  let firstUser = null;
+  let firstAccount = null;
 
   for (let page = 0; page < maxPages; page++) {
-    const data = await runGraphql(query, { login: username, after }, token);
-    const user = data?.user;
-    if (!user) {
+    const variables = useViewer ? { after } : { login: username, after };
+    const data = await runGraphql(query, variables, token);
+    const account = data?.account;
+    if (!account) {
       throw new Error(`GitHub user "${username}" not found.`);
     }
-    firstUser ??= user;
+    firstAccount ??= account;
 
-    const connection = selectConnection(user);
+    const connection = selectConnection(account);
     const nodes = (connection?.nodes ?? []).filter(Boolean);
     items.push(...nodes);
 
-    if (shouldStop?.(nodes, user)) {
+    if (shouldStop?.(nodes, account)) {
       break;
     }
 
     const pageInfo = connection?.pageInfo;
-    if (!pageInfo?.hasNextPage || !pageInfo.endCursor || pageInfo.endCursor === after) {
+    if (
+      !pageInfo?.hasNextPage ||
+      !pageInfo.endCursor ||
+      pageInfo.endCursor === after
+    ) {
       break;
     }
     after = pageInfo.endCursor;
   }
 
-  return { items, firstUser };
+  return { items, firstAccount };
+}
+
+/**
+ * Fetch repositories touched across all contribution years via `contributionsCollection`.
+ * This catches organization repos or private template forks that `User.repositories` may omit.
+ */
+async function fetchYearlyContributedRepos(
+  username,
+  years,
+  token,
+  useViewer,
+) {
+  const repos = [];
+  for (let i = 0; i < years.length; i += 2) {
+    const chunk = years.slice(i, i + 2);
+    const query = buildYearlyContribReposQuery(chunk, useViewer);
+    const variables = useViewer ? {} : { login: username };
+    const data = await runGraphql(query, variables, token);
+    const account = data?.account;
+    if (!account) {
+      continue;
+    }
+    for (let idx = 0; idx < chunk.length; idx++) {
+      const yearBlock = account[`year_${idx}`];
+      const lists = [
+        ...(yearBlock?.commitContributionsByRepository ?? []),
+        ...(yearBlock?.pullRequestContributionsByRepository ?? []),
+      ];
+      for (const entry of lists) {
+        if (entry?.repository) {
+          repos.push(entry.repository);
+        }
+      }
+    }
+  }
+  return repos;
 }
 
 /**
  * Fetch repository stars, language sizes, followers, and contributed-to repositories for one account.
- *
- * @param {string} username GitHub username.
- * @param {string} token GitHub token.
  */
-async function fetchAccountExtras(username, token) {
-  const [{ items: starRepos, firstUser }, { items: langRepos }, { items: contributedRepos }] =
-    await Promise.all([
-      paginateGraphql(
-        STAR_REPOS_QUERY,
-        username,
-        token,
-        (user) => user.repositories,
-        {
-          maxPages: 10,
-          shouldStop: (nodes) =>
-            nodes.some((repo) => (repo.stargazerCount ?? 0) === 0),
-        },
-      ),
-      paginateGraphql(
-        LANG_REPOS_QUERY,
-        username,
-        token,
-        (user) => user.repositories,
-        { maxPages: 5 },
-      ),
-      paginateGraphql(
-        CONTRIBUTED_REPOS_QUERY,
-        username,
-        token,
-        (user) => user.repositoriesContributedTo,
-        { maxPages: 5 },
-      ),
-    ]);
+async function fetchAccountExtras(username, token, isViewerToken) {
+  const [
+    { items: starRepos, firstAccount },
+    { items: directLangRepos },
+    { items: contributedRepos },
+  ] = await Promise.all([
+    paginateAccountConnection(
+      buildStarReposQuery(isViewerToken),
+      username,
+      token,
+      isViewerToken,
+      (account) => account.repositories,
+      {
+        maxPages: 10,
+        shouldStop: (nodes) =>
+          nodes.some((repo) => (repo.stargazerCount ?? 0) === 0),
+      },
+    ),
+    paginateAccountConnection(
+      buildLangReposQuery(isViewerToken),
+      username,
+      token,
+      isViewerToken,
+      (account) => account.repositories,
+      { maxPages: 10 },
+    ),
+    paginateAccountConnection(
+      buildContributedReposQuery(isViewerToken),
+      username,
+      token,
+      isViewerToken,
+      (account) => account.repositoriesContributedTo,
+      { maxPages: 5 },
+    ),
+  ]);
+
+  const contributionYears =
+    firstAccount?.contributionsCollection?.contributionYears ?? [];
+  const yearlyRepos =
+    contributionYears.length > 0
+      ? await fetchYearlyContributedRepos(
+          username,
+          contributionYears,
+          token,
+          isViewerToken,
+        )
+      : [];
+
+  // Combine direct non-fork repos with non-fork or private repos contributed to.
+  const langReposByName = new Map();
+  for (const repo of directLangRepos) {
+    if (repo?.nameWithOwner) {
+      langReposByName.set(repo.nameWithOwner, repo);
+    }
+  }
+  for (const repo of [...contributedRepos, ...yearlyRepos]) {
+    if (!repo?.nameWithOwner) {
+      continue;
+    }
+    // Keep public forks excluded to match github-stats-extended behavior, while including private org repos.
+    if (repo.isFork && !repo.isPrivate) {
+      continue;
+    }
+    if (!langReposByName.has(repo.nameWithOwner)) {
+      langReposByName.set(repo.nameWithOwner, repo);
+    }
+  }
+
+  const allStarRepos = [...starRepos];
+  for (const repo of [...contributedRepos, ...yearlyRepos]) {
+    if (repo?.nameWithOwner && (repo.stargazerCount ?? 0) > 0) {
+      allStarRepos.push(repo);
+    }
+  }
+
+  const langRepos = [...langReposByName.values()];
+  console.log(
+    `Fetched extras for "${username}" (viewer=${isViewerToken}): starRepos=${starRepos.length}, directLangRepos=${directLangRepos.length}, totalLangRepos=${langRepos.length}, contributedRepos=${contributedRepos.length}`,
+  );
 
   return {
-    followers: firstUser?.followers?.totalCount ?? 0,
-    starRepos,
+    followers: firstAccount?.followers?.totalCount ?? 0,
+    starRepos: allStarRepos,
     langRepos,
     contributedRepos,
   };
@@ -379,10 +383,6 @@ async function fetchAccountExtras(username, token) {
 
 /**
  * Determine whether a repository should be excluded by short name or `owner/name`.
- *
- * @param {{ name?: string, nameWithOwner?: string }} repo Repository node.
- * @param {Set<string>} excludeSet Excluded repository identifiers.
- * @returns {boolean} True when excluded.
  */
 function isExcludedRepo(repo, excludeSet) {
   if (repo.name && excludeSet.has(repo.name)) {
@@ -542,18 +542,8 @@ export function mergeAccountMetrics(
  * Generate merged `stats.svg` and `top-langs.svg` files in `OUTPUT_DIR`.
  */
 async function main() {
-  const primaryUsername =
-    process.env.PRIMARY_USERNAME?.trim() ||
-    process.env.GITHUB_REPOSITORY_OWNER?.trim();
-  const primaryToken = process.env.PRIMARY_TOKEN?.trim();
-  const workToken = process.env.WORK_STATS_TOKEN?.trim();
-  const workUsernameOverride = process.env.WORK_USERNAME?.trim();
   const excludeRepo = parseCsv(process.env.EXCLUDE_REPO);
   const outputDir = process.env.OUTPUT_DIR?.trim() || "dist";
-
-  if (!primaryUsername || !primaryToken) {
-    throw new Error("PRIMARY_USERNAME and PRIMARY_TOKEN are required.");
-  }
 
   const {
     calculateRank,
@@ -564,20 +554,7 @@ async function main() {
   } = await loadCoreModules();
 
   loadConfigFromEnv(process.env);
-
-  const accounts = [{ username: primaryUsername, token: primaryToken }];
-
-  if (workToken) {
-    const resolvedWorkLogin =
-      workUsernameOverride || (await resolveAuthenticatedUser(workToken)).login;
-    if (resolvedWorkLogin.toLowerCase() !== primaryUsername.toLowerCase()) {
-      accounts.push({ username: resolvedWorkLogin, token: workToken });
-    } else {
-      console.log(
-        `WORK_STATS_TOKEN resolved to primary account "${primaryUsername}"; skipping duplicate fetch.`,
-      );
-    }
-  }
+  const accounts = await resolveAccounts(process.env);
 
   const accountResults = [];
   for (const account of accounts) {
@@ -603,7 +580,7 @@ async function main() {
         true,
         account.token,
       ),
-      fetchAccountExtras(account.username, account.token),
+      fetchAccountExtras(account.username, account.token, account.isViewerToken),
     ]);
     accountResults.push({ username: account.username, stats, extras });
   }
@@ -617,7 +594,7 @@ async function main() {
   const statsSvg = renderStatsCard(
     statsData,
     STATS_CARD_OPTIONS,
-    primaryUsername,
+    accounts[0].username,
     [],
     [],
   );

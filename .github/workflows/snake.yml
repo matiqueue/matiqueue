@@ -17,11 +17,31 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - name: Generate Snake SVG
-        uses: Platane/snk/svg-only@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          github_user_name: matiqueue
-          outputs: |
+          node-version: "24"
+
+      - name: Fetch Platane/snk SVG renderer
+        run: |
+          rm -rf "${{ runner.temp }}/snk"
+          git clone --depth 1 --filter=blob:none --sparse --branch v3 https://github.com/Platane/snk.git "${{ runner.temp }}/snk"
+          git -C "${{ runner.temp }}/snk" sparse-checkout set svg-only/dist
+
+      - name: Generate merged Snake SVGs
+        run: node .github/scripts/generate-snake.mjs
+        env:
+          SNK_ENTRY: ${{ runner.temp }}/snk/svg-only/dist/index.js
+          PRIMARY_USERNAME: ${{ github.repository_owner }}
+          PRIMARY_TOKEN: ${{ secrets.STATS_TOKEN || github.token }}
+          WORK_STATS_TOKEN: ${{ secrets.WORK_STATS_TOKEN }}
+          WORK_USERNAME: ${{ vars.WORK_USERNAME }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INPUT_GITHUB_USER_NAME: ${{ github.repository_owner }}
+          INPUT_OUTPUTS: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 

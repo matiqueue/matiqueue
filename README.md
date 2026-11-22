@@ -67,8 +67,8 @@
 <br/>
 
 > [!NOTE]
-> **Open-Source &amp; Production Activity:**
-> The metrics above aggregate activity across both my open-source repositories and private engineering workspaces. While the numbers reflect my full engineering output, the source code for commercial platforms, Python/Django architectures, and client systems at **GranTeam** remains private inside enterprise organizations. 🔒
+> **Combined Activity Across Personal &amp; Work Accounts:**
+> The GitHub stats, top languages, and contribution snake above combine activity from **two GitHub accounts** — my personal profile (`matiqueue`) and my work account — covering both open-source and private repositories. Because many commercial platforms, Python/Django architectures, and client systems at **GranTeam** live in private repositories, their source code remains confidential while their metrics are reflected above. 🔒
 
 ### 🤝 Let's Connect &amp; Collaborate
 
