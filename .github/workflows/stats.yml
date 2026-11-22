@@ -20,25 +20,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate GitHub Stats SVG
-        uses: stats-organization/github-readme-stats-action@v2
-        env:
-          FETCH_MULTI_PAGE_STARS: "true"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          card: stats
-          options: "username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR&contribs_include_own_repos=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bb9af7&text_color=c0caf5"
-          path: dist/stats.svg
-          token: ${{ secrets.STATS_TOKEN || github.token }}
-          fail_on_error: true
+          node-version: "24"
 
-      - name: Generate Top Languages SVG
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: top-langs
-          options: "username=${{ github.repository_owner }}&layout=compact&langs_count=8&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c0caf5"
-          path: dist/top-langs.svg
-          token: ${{ secrets.STATS_TOKEN || github.token }}
-          fail_on_error: true
+      - name: Install stats core package
+        run: |
+          mkdir -p "${{ runner.temp }}/grs-core"
+          npm --prefix "${{ runner.temp }}/grs-core" install --no-save --no-package-lock --ignore-scripts @stats-organization/github-readme-stats-core@2
+
+      - name: Generate merged GitHub Stats & Top Languages SVGs
+        run: node .github/scripts/generate-stats.mjs
+        env:
+          CORE_BUILD_DIR: ${{ runner.temp }}/grs-core/node_modules/@stats-organization/github-readme-stats-core/build
+          FETCH_MULTI_PAGE_STARS: "true"
+          PRIMARY_USERNAME: ${{ github.repository_owner }}
+          PRIMARY_TOKEN: ${{ secrets.STATS_TOKEN || github.token }}
+          WORK_STATS_TOKEN: ${{ secrets.WORK_STATS_TOKEN }}
+          WORK_USERNAME: ${{ vars.WORK_USERNAME }}
+          EXCLUDE_REPO: ${{ vars.EXCLUDE_REPO }}
+          OUTPUT_DIR: dist
 
       - name: Push Stats SVGs to Stats Branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
