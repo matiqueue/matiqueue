@@ -42,6 +42,16 @@ jobs:
           EXCLUDE_REPO: ${{ vars.EXCLUDE_REPO }}
           OUTPUT_DIR: dist
 
+      - name: Generate merged Streak Stats SVG
+        run: node .github/scripts/generate-streak.mjs
+        env:
+          PRIMARY_USERNAME: ${{ github.repository_owner }}
+          PRIMARY_TOKEN: ${{ secrets.STATS_TOKEN || github.token }}
+          WORK_STATS_TOKEN: ${{ secrets.WORK_STATS_TOKEN }}
+          WORK_USERNAME: ${{ vars.WORK_USERNAME }}
+          STREAK_TIMEZONE: Europe/Warsaw
+          OUTPUT_DIR: dist
+
       - name: Push Stats SVGs to Stats Branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:

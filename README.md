@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=matiqueue&theme=tokyonight&hide_border=true&background=0d1117&ring=70a5fd&fire=ff0080&currStreakLabel=70a5fd" alt="GitHub Streak" />
+  <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/stats/streak.svg" alt="GitHub Streak" />
 </p>
 </div>
 
@@ -68,7 +68,7 @@
 
 > [!NOTE]
 > **Combined Activity Across Personal &amp; Work Accounts:**
-> The GitHub stats, top languages, and contribution snake above combine activity from **two GitHub accounts** — my personal profile (`matiqueue`) and my work account — covering both open-source and private repositories. Because many commercial platforms, Python/Django architectures, and client systems at **GranTeam** live in private repositories, their source code remains confidential while their metrics are reflected above. 🔒
+> The GitHub stats, streak stats, top languages, and contribution snake above combine activity from **two GitHub accounts**, my personal profile (`matiqueue`) and my work account, covering both open-source and private repositories. Because many commercial platforms, Python/Django architectures, and client systems at **GranTeam** live in private repositories, their source code remains confidential while their metrics are reflected above. 🔒
 
 ### 🤝 Let's Connect &amp; Collaborate
 
