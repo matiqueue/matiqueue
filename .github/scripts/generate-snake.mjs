@@ -177,6 +177,15 @@ async function main() {
     `Merged contribution calendar across ${accounts.length} account(s): totalContributions=${mergedCalendar.totalContributions}`,
   );
 
+  const allDays = mergedCalendar.weeks.flatMap((w) => w.contributionDays);
+  const peakDay = allDays.reduce(
+    (max, d) => Math.max(max, d.contributionCount ?? 0),
+    0,
+  );
+  const avgPerDay = Number(
+    (mergedCalendar.totalContributions / Math.max(1, allDays.length)).toFixed(1),
+  );
+
   await mkdir("dist", { recursive: true });
   await writeFile(
     path.join("dist", ".snake-meta.json"),
@@ -184,6 +193,8 @@ async function main() {
       totalContributions: mergedCalendar.totalContributions,
       accountCount: accounts.length,
       weeks: mergedCalendar.weeks.length,
+      peakDay,
+      avgPerDay,
     }),
     "utf8",
   );

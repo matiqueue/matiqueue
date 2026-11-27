@@ -30,13 +30,17 @@ function enhanceDarkSvg(svg, meta) {
   const weeksCount = Number(meta.weeks || 53);
   const accountLabel =
     meta.accountCount > 1 ? ` · ${meta.accountCount} ACCOUNTS` : "";
+  const peakDay = Number(meta.peakDay || 0);
+  const avgPerDay = Number(meta.avgPerDay || 0).toFixed(1);
+  const velocityLabel =
+    peakDay > 0 ? `PEAK ${peakDay}/DAY · ${avgPerDay}/DAY AVG` : `${avgPerDay}/DAY AVG`;
 
   const legendRects = LEGEND_COLORS.map(
     (color, idx) =>
-      `<rect x="${38 + idx * 13}" y="160" width="9" height="9" rx="2" fill="${color}" stroke="#ffffff" stroke-opacity="0.06" stroke-width="0.6"/>`,
+      `<rect x="${38 + idx * 13}" y="164" width="9" height="9" rx="2" fill="${color}" stroke="#ffffff" stroke-opacity="0.06" stroke-width="0.6"/>`,
   ).join("");
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 176" width="860" height="176" fill="none">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 182" width="860" height="182" fill="none">
   <desc>Generated with https://github.com/Platane/snk</desc>
   <defs>
     <clipPath id="snk-grid-clip">
@@ -57,10 +61,12 @@ function enhanceDarkSvg(svg, meta) {
   </g>
   <line x1="8" y1="27" x2="852" y2="27" stroke="#1e293b" stroke-width="1" stroke-opacity="0.8"/>
   <g transform="translate(6, 35)" clip-path="url(#snk-grid-clip)">${snkBody}</g>
+  <line x1="8" y1="155" x2="852" y2="155" stroke="#1e293b" stroke-width="1" stroke-opacity="0.8"/>
   <g>
-    <text x="8" y="168" fill="#64748b" text-anchor="start" class="snk-mono" font-size="9.5">Less</text>
+    <text x="8" y="172" fill="#64748b" text-anchor="start" class="snk-mono" font-size="9.5">Less</text>
     ${legendRects}
-    <text x="106" y="168" fill="#64748b" text-anchor="start" class="snk-mono" font-size="9.5">More</text>
+    <text x="106" y="172" fill="#64748b" text-anchor="start" class="snk-mono" font-size="9.5">More</text>
+    <text x="852" y="172" fill="#64748b" text-anchor="end" class="snk-mono" font-size="9.5" font-weight="600" letter-spacing="0.06em">${velocityLabel}</text>
   </g>
 </svg>
 `;
