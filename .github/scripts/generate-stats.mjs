@@ -11,14 +11,14 @@ const CARD_THEME_OPTIONS = {
   theme: "tokyonight",
   hide_border: true,
   bg_color: "0d1117",
-  title_color: "38bdf8",
-  text_color: "cbd5e1",
+  title_color: "6899cc",
+  text_color: "c9d1d9",
 };
 
 const STATS_CARD_OPTIONS = {
   ...CARD_THEME_OPTIONS,
-  ring_color: "38bdf8",
-  icon_color: "818cf8",
+  ring_color: "6899cc",
+  icon_color: "7c8db5",
   show_icons: true,
   include_all_commits: true,
   hide: [],
