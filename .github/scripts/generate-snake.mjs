@@ -1,3 +1,4 @@
+import { mkdir, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -95,8 +96,13 @@ export function mergeContributionCalendars(calendars) {
   const classify = createLevelClassifier(positiveCounts);
   let totalContributions = 0;
 
-  const weeks = baseWeeks.map((week) => ({
-    contributionDays: (week.contributionDays ?? []).map((day) => {
+  const addUtcDays = (iso, delta) => {
+    const dt = new Date(Date.parse(`${iso}T00:00:00Z`) + delta * 864e5);
+    return dt.toISOString().slice(0, 10);
+  };
+
+  const weeks = baseWeeks.map((week) => {
+    const rawDays = (week.contributionDays ?? []).map((day) => {
       const contributionCount = countsByDate.get(day.date) ?? 0;
       totalContributions += contributionCount;
       return {
@@ -105,8 +111,27 @@ export function mergeContributionCalendars(calendars) {
         contributionCount,
         contributionLevel: classify(contributionCount),
       };
-    }),
-  }));
+    });
+
+    if (rawDays.length === 0 || rawDays.length === 7) {
+      return { contributionDays: rawDays };
+    }
+
+    const byWeekday = new Map(rawDays.map((d) => [d.weekday, d]));
+    const anchor = rawDays[0];
+    const fullDays = [];
+    for (let wd = 0; wd < 7; wd++) {
+      fullDays.push(
+        byWeekday.get(wd) ?? {
+          date: addUtcDays(anchor.date, wd - anchor.weekday),
+          weekday: wd,
+          contributionCount: 0,
+          contributionLevel: "NONE",
+        },
+      );
+    }
+    return { contributionDays: fullDays };
+  });
 
   return { totalContributions, weeks };
 }
@@ -150,6 +175,17 @@ async function main() {
   const mergedCalendar = mergeContributionCalendars(calendars);
   console.log(
     `Merged contribution calendar across ${accounts.length} account(s): totalContributions=${mergedCalendar.totalContributions}`,
+  );
+
+  await mkdir("dist", { recursive: true });
+  await writeFile(
+    path.join("dist", ".snake-meta.json"),
+    JSON.stringify({
+      totalContributions: mergedCalendar.totalContributions,
+      accountCount: accounts.length,
+      weeks: mergedCalendar.weeks.length,
+    }),
+    "utf8",
   );
 
   // Intercept Platane/snk's single-user GraphQL calendar fetch and supply the merged calendar.
