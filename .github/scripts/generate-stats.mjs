@@ -11,7 +11,7 @@ const CARD_THEME_OPTIONS = {
   theme: "tokyonight",
   hide_border: true,
   bg_color: "0d1117",
-  title_color: "6899cc",
+  title_color: "5cc2f8",
   text_color: "c9d1d9",
 };
 
