@@ -33,10 +33,10 @@ function enhanceDarkSvg(svg, meta) {
 
   const legendRects = LEGEND_COLORS.map(
     (color, idx) =>
-      `<rect x="${38 + idx * 13}" y="151" width="9" height="9" rx="2" fill="${color}" stroke="#ffffff" stroke-opacity="0.06" stroke-width="0.6"/>`,
+      `<rect x="${38 + idx * 13}" y="160" width="9" height="9" rx="2" fill="${color}" stroke="#ffffff" stroke-opacity="0.06" stroke-width="0.6"/>`,
   ).join("");
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 166" width="860" height="166" fill="none">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 176" width="860" height="176" fill="none">
   <desc>Generated with https://github.com/Platane/snk</desc>
   <defs>
     <clipPath id="snk-grid-clip">
@@ -53,14 +53,14 @@ function enhanceDarkSvg(svg, meta) {
   <g>
     <circle cx="12" cy="14" r="3.5" fill="#34d399" class="snk-dot"/>
     <text x="23" y="17.5" fill="#94a3b8" class="snk-mono" font-size="10.5" font-weight="600" letter-spacing="0.08em">CONTRIBUTION FLOW · ${weeksCount} WEEKS</text>
-    <text x="852" y="17.5" fill="#cbd5e1" text-anchor="end" class="snk-mono" font-size="10.5" font-weight="600" letter-spacing="0.04em">${totalText} CONTRIBUTIONS (12M)${accountLabel}</text>
+    <text x="852" y="17.5" fill="#cbd5e1" text-anchor="end" class="snk-mono" font-size="10.5" font-weight="600" letter-spacing="0.04em">${totalText} CONTRIBUTIONS${accountLabel}</text>
   </g>
   <line x1="8" y1="27" x2="852" y2="27" stroke="#1e293b" stroke-width="1" stroke-opacity="0.8"/>
   <g transform="translate(6, 35)" clip-path="url(#snk-grid-clip)">${snkBody}</g>
   <g>
-    <text x="8" y="159" fill="#64748b" text-anchor="start" class="snk-mono" font-size="9.5">Less</text>
+    <text x="8" y="168" fill="#64748b" text-anchor="start" class="snk-mono" font-size="9.5">Less</text>
     ${legendRects}
-    <text x="106" y="159" fill="#64748b" text-anchor="start" class="snk-mono" font-size="9.5">More</text>
+    <text x="106" y="168" fill="#64748b" text-anchor="start" class="snk-mono" font-size="9.5">More</text>
   </g>
 </svg>
 `;
