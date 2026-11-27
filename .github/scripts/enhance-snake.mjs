@@ -31,13 +31,11 @@ function enhanceDarkSvg(svg, meta) {
   const accountLabel =
     meta.accountCount > 1 ? ` · ${meta.accountCount} ACCOUNTS` : "";
   const peakDay = Number(meta.peakDay || 0);
-  const avgPerDay = Number(meta.avgPerDay || 0).toFixed(1);
-  const velocityLabel =
-    peakDay > 0 ? `PEAK ${peakDay}/DAY · ${avgPerDay}/DAY AVG` : `${avgPerDay}/DAY AVG`;
+  const peakLabel = `PEAK DAY ${peakDay}`;
 
   const legendRects = LEGEND_COLORS.map(
     (color, idx) =>
-      `<rect x="${38 + idx * 13}" y="164" width="9" height="9" rx="2" fill="${color}" stroke="#ffffff" stroke-opacity="0.06" stroke-width="0.6"/>`,
+      `<rect x="${42 + idx * 13}" y="164" width="9" height="9" rx="2" fill="${color}" stroke="#ffffff" stroke-opacity="0.06" stroke-width="0.6"/>`,
   ).join("");
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 182" width="860" height="182" fill="none">
@@ -50,23 +48,23 @@ function enhanceDarkSvg(svg, meta) {
   <style>
     ${snkStyle}
     .s { filter: drop-shadow(0 0 4px rgba(97, 218, 251, 0.55)); }
-    .snk-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .snk-label { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; fill: #94a3b8; }
     @keyframes snk-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
     .snk-dot { animation: snk-pulse 2.2s ease-in-out infinite; }
   </style>
   <g>
     <circle cx="12" cy="14" r="3.5" fill="#34d399" class="snk-dot"/>
-    <text x="23" y="17.5" fill="#94a3b8" class="snk-mono" font-size="10.5" font-weight="600" letter-spacing="0.08em">CONTRIBUTION FLOW · ${weeksCount} WEEKS</text>
-    <text x="852" y="17.5" fill="#cbd5e1" text-anchor="end" class="snk-mono" font-size="10.5" font-weight="600" letter-spacing="0.04em">${totalText} CONTRIBUTIONS${accountLabel}</text>
+    <text x="23" y="17.5" text-anchor="start" class="snk-label">CONTRIBUTION FLOW · ${weeksCount} WEEKS</text>
+    <text x="852" y="17.5" text-anchor="end" class="snk-label">${totalText} CONTRIBUTIONS${accountLabel}</text>
   </g>
   <line x1="8" y1="27" x2="852" y2="27" stroke="#1e293b" stroke-width="1" stroke-opacity="0.8"/>
   <g transform="translate(6, 35)" clip-path="url(#snk-grid-clip)">${snkBody}</g>
   <line x1="8" y1="155" x2="852" y2="155" stroke="#1e293b" stroke-width="1" stroke-opacity="0.8"/>
   <g>
-    <text x="8" y="173" fill="#64748b" text-anchor="start" dominant-baseline="alphabetic" class="snk-mono" font-size="9.5">Less</text>
+    <text x="8" y="173" text-anchor="start" dominant-baseline="alphabetic" class="snk-label">LESS</text>
     ${legendRects}
-    <text x="106" y="173" fill="#64748b" text-anchor="start" dominant-baseline="alphabetic" class="snk-mono" font-size="9.5">More</text>
-    <text x="852" y="173" fill="#64748b" text-anchor="end" dominant-baseline="alphabetic" class="snk-mono" font-size="9.5" letter-spacing="0.06em">${velocityLabel}</text>
+    <text x="110" y="173" text-anchor="start" dominant-baseline="alphabetic" class="snk-label">MORE</text>
+    <text x="852" y="173" text-anchor="end" dominant-baseline="alphabetic" class="snk-label">${peakLabel}</text>
   </g>
 </svg>
 `;
