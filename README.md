@@ -27,12 +27,11 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/stats/streak.svg" alt="GitHub Streak" />
 </p>
-</div>
 
-### ⚡ Daily Commit Velocity &amp; Contribution Flow
-
-<div align="center">
+<p align="center">
   <img src="https://raw.githubusercontent.com/matiqueue/matiqueue/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
+</p>
+
 </div>
 
 ### 🛠️ Core Arsenal & Tech Stack
