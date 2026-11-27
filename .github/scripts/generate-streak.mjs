@@ -296,14 +296,14 @@ export function renderStreakSvg(stats, currentYear) {
             <g style='isolation: isolate'>
                 <!-- Total Contributions big number -->
                 <g transform='translate(82.5, 48)'>
-                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#70A5FD' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='28px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.6s'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#61DAFB' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='28px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.6s'>
                         ${totalContribText}
                     </text>
                 </g>
 
                 <!-- Total Contributions label -->
                 <g transform='translate(82.5, 84)'>
-                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#70A5FD' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='400' font-size='14px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.7s'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#61DAFB' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='400' font-size='14px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.7s'>
                         Total Contributions
                     </text>
                 </g>
@@ -318,7 +318,7 @@ export function renderStreakSvg(stats, currentYear) {
             <g style='isolation: isolate'>
                 <!-- Current Streak label -->
                 <g transform='translate(247.5, 108)'>
-                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#70a5fd' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='14px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.9s'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#61dafb' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='14px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.9s'>
                         Current Streak
                     </text>
                 </g>
@@ -332,7 +332,7 @@ export function renderStreakSvg(stats, currentYear) {
 
                 <!-- Ring around number -->
                 <g mask='url(#mask_out_ring_behind_fire)'>
-                    <circle cx='247.5' cy='71' r='40' fill='none' stroke='#70a5fd' stroke-width='5' style='opacity: 0; animation: fadein 0.5s linear forwards 0.4s'></circle>
+                    <circle cx='247.5' cy='71' r='40' fill='none' stroke='#61dafb' stroke-width='5' style='opacity: 0; animation: fadein 0.5s linear forwards 0.4s'></circle>
                 </g>
                 <!-- Fire icon -->
                 <g transform='translate(247.5, 19.5)' stroke-opacity='0' style='opacity: 0; animation: fadein 0.5s linear forwards 0.6s'>
@@ -350,14 +350,14 @@ export function renderStreakSvg(stats, currentYear) {
             <g style='isolation: isolate'>
                 <!-- Longest Streak big number -->
                 <g transform='translate(412.5, 48)'>
-                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#70A5FD' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='28px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 1.2s'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#61DAFB' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='28px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 1.2s'>
                         ${longestLengthText}
                     </text>
                 </g>
 
                 <!-- Longest Streak label -->
                 <g transform='translate(412.5, 84)'>
-                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#70A5FD' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='400' font-size='14px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 1.3s'>
+                    <text x='0' y='32' stroke-width='0' text-anchor='middle' fill='#61DAFB' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='400' font-size='14px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 1.3s'>
                         Longest Streak
                     </text>
                 </g>
